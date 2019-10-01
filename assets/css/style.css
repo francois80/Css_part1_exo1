@@ -1,0 +1,127 @@
+@media screen and (min-width: 480px){
+  .container{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+}
+
+header.page-header { /* affichage de l'image dans le header*/
+  background: no-repeat left/cover url(../img/header2.jpg);
+  background-position-y: top 30%;
+  display: flex;
+  height: 250px;
+  width: 100%;
+}
+
+header.page-header > figure { /* affichage du texte sur l'image du header*/
+  font: bold "Arial,Verdana", cursive, fantasy;
+  color:black;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {text-decoration: none;} /* pas de soulignement sous le lien */
+
+div.menu {
+  min-height: 2em;		/* No height: can grow if :target doesn't work */
+  position: relative;		/* Establish a containing block */
+  line-height: 1;		/* Easier to calculate with */
+  z-index: 0
+}			/* So that we can put other things behind */
+
+div.menu > div {display: inline}		/* We want the buttons all on one line */
+
+div.menu > div > a {
+  color: black;			/* Looks more like a button than a link */
+  background: #ADD8E6;		/* Active tabs are light blue */
+  padding: 0.2em;		/* Some breathing space */
+  border: 0.1em outset #BBB;	/* Make it look like a button */
+  border-bottom: none
+} /* not Visually connect tab and tab body */
+
+div.menu > div:not(:target) > a {
+  border-bottom: none;		/* Make the bottom border disappear */
+  background: #FFFFFF
+}		/* Inactive tabs are dark gray */
+
+div.menu > div:target > a,	/* Apply to the targeted item or... */
+  :target #menu4 > a {		/* ... to the default item */
+  border-bottom: none; /* not Visually connect tab and tab body */
+  background: #ADD8E6;
+}		/* Active tab is light blue */
+
+div.menu > div > div {
+  background: #FFFFFF;		/* blanc */
+  z-index: -2;			/* Behind, because the borders overlap */
+  left: 0; top: 1.3em;		/* The top needs some calculation... */
+  bottom: 0; right: 0;		/* Other sides flush with containing block */
+  overflow: auto;		/* Scroll bar if needed */
+  padding: 0.3em;		/* Looks better */
+  border: 0
+}	/* 3D look */
+
+div.menu > div:not(:target) > div { /* Protect CSS1 & CSS2 browsers */
+  position: absolute
+}		/* All these DIVs overlap */
+
+div.menu > div:target > div, :target #menu4 > div {
+  position: absolute;		/* All these DIVs overlap */
+  z-index: -1
+}			/* Raise it above the others */
+
+div.menu :target {
+  outline: none
+}
+
+.center{
+  text-align: center;
+}
+
+#Texte1{ /* box de 80% de large avec marge identique à doite et à gauche */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textSousMenu{
+  background-color: #F2E4BE;
+  padding: 10px;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.para{
+  flex-basis: 33%;
+  margin-left: 5px;
+  margin-right: 5px;
+  background: #ADD8E6;
+
+}
+/*
+.para1:nth-child(1){
+
+  background: no-repeat left/cover url(https://www.petitfute.com/medias/professionnel/211029/premium/600_450/d6a1845461f1fe5c7698019199e2b198_office-de-tourisme-placa-de-catalunya_.jpg);
+  height: 100px;
+}
+
+.para1:nth-child(2){
+  background: no-repeat left/cover url(../img/header2.jpg);
+  height: 50px;
+}
+
+.para1:nth-child(3){
+  backgroun: no-repeat left/cover url(../img/header2.jpg);
+  height: 50px;
+}
+*/
